@@ -1,0 +1,19 @@
+{
+  "name": "telefam",
+  "version": "1.0.0",
+  "description": "A chat app using socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sharathgeorgem"
+  },
+  "author": "Sharath George M",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.1.1"
+  }
+}

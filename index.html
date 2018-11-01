@@ -16,20 +16,19 @@
   <body>
     <ul id="messages"></ul>
     <form action="" id="form-id">
-      <input id="m" autocomplete="off" /><button id="btn-id">Send</button>
+      <input id="m" autocomplete="off" type="text" name="message"/><button id="btn-id" onclick="sendMessage()">Send</button>
     </form>
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
     <script>
-        var socket = io();
-        var form = document.getElementById('form-id')
-        document.getElementById('btn-id').addEventListener("click", function () {
-          form.submit(function () {
-            socket.emit('chat message', document.getElementById('m').textContent)
-          })
+        var socket = io()
+        var message = document.getElementById('messages')
+        var node = document.createElement('b')
+        socket.emit('message from client', 'You want some message?')
+        socket.on('message from server', function(msg) {
+          console.log(msg)
+          node.textContent = msg
+          message.appendChild(node)
         })
-        function sendMessage() {
-          
-        } 
     </script>
   </body>
 </html>
